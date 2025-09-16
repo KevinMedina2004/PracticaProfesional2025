@@ -51,8 +51,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Carrito.aspx" />
     <Content Include="Compra.aspx" />
+    <Content Include="CompraRealizada.aspx" />
+    <Content Include="Contacto.aspx" />
     <Content Include="Contenido\1f60a.png" />
+    <Content Include="Contenido\9562bf9d794f3d8d59f7e3fde205fdc4.jpg" />
+    <Content Include="Contenido\apps.3104.14481483800220513.5d6b67d5-bde5-4f6b-9e61-27c8013e2ec6.png" />
+    <Content Include="Contenido\Captura de pantalla 2025-09-02 201137.png" />
     <Content Include="Contenido\css\bootstrap.min.css" />
     <Content Include="Contenido\css\bootstrap\mixins\_border-radius.css" />
     <Content Include="Contenido\css\bootstrap\mixins\_screen-reader.css" />
@@ -61,6 +67,11 @@
     <Content Include="Contenido\css\bootstrap\_media.css" />
     <Content Include="Contenido\css\style.css" />
     <Content Include="Contenido\descarga.jpg" />
+    <Content Include="Contenido\images\fotos de productos\8509b217-ce6d-4c58-ab9f-e8e05607a40a.JPG" />
+    <Content Include="Contenido\images\fotos de productos\bf732764-e779-4c94-aab8-935bcf1f5c9f.JPG" />
+    <Content Include="Contenido\images\fotos de productos\IMG_6373.PNG" />
+    <Content Include="Contenido\images\fotos de productos\IMG_6374.PNG" />
+    <Content Include="Contenido\images\fotos de productos\IMG_6375.PNG" />
     <Content Include="Contenido\js\bootstrap.min.js" />
     <Content Include="Contenido\js\jquery.min.js" />
     <Content Include="Contenido\js\main.js" />
@@ -84,6 +95,7 @@
     <Content Include="Global.asax" />
     <Content Include="Inicio.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Moda.aspx" />
     <Content Include="Prueba.aspx" />
     <Content Include="Vista.aspx" />
     <Content Include="Web.config">
@@ -97,12 +109,33 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Carrito.aspx.cs">
+      <DependentUpon>Carrito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carrito.aspx.designer.cs">
+      <DependentUpon>Carrito.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Compra.aspx.cs">
       <DependentUpon>Compra.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Compra.aspx.designer.cs">
       <DependentUpon>Compra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CompraRealizada.aspx.cs">
+      <DependentUpon>CompraRealizada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CompraRealizada.aspx.designer.cs">
+      <DependentUpon>CompraRealizada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contacto.aspx.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacto.aspx.designer.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -127,6 +160,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moda.aspx.cs">
+      <DependentUpon>Moda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moda.aspx.designer.cs">
+      <DependentUpon>Moda.aspx</DependentUpon>
     </Compile>
     <Compile Include="Principal.Master.cs">
       <DependentUpon>Principal.Master</DependentUpon>

@@ -15,6 +15,6 @@ D:\PracticaProfesional2025\PracticaProfesional2025\obj\Debug\PracticaProfesional
 D:\PracticaProfesional2025\PracticaProfesional2025\obj\Debug\PracticaProfesional2025.pdb
 C:\Users\Kevin\Desktop\PracticaProfesional2025-main\PracticaProfesional2025\bin\PracticaProfesional2025.dll
 C:\Users\Kevin\Desktop\PracticaProfesional2025-main\PracticaProfesional2025\bin\PracticaProfesional2025.pdb
-C:\Users\Kevin\Desktop\PracticaProfesional2025-main\PracticaProfesional2025\obj\Debug\PracticaProfesional2025.csprojResolveAssemblyReference.cache
 C:\Users\Kevin\Desktop\PracticaProfesional2025-main\PracticaProfesional2025\obj\Debug\PracticaProfesional2025.dll
 C:\Users\Kevin\Desktop\PracticaProfesional2025-main\PracticaProfesional2025\obj\Debug\PracticaProfesional2025.pdb
+C:\Users\Kevin\Desktop\PracticaProfesional2025-main\PracticaProfesional2025\obj\Debug\PracticaProfesional2025.csprojResolveAssemblyReference.cache

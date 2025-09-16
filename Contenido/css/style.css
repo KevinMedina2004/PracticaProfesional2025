@@ -4,6 +4,7 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -46,6 +47,26 @@ html {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
+.tituloImagen {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  background-color: #f0f0f0;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.descripcionImagen {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+
+
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block; }
 
@@ -57,7 +78,8 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff; }
+  background: #fff;
+   }
 
 [tabindex="-1"]:focus {
   outline: 0 !important; }

@@ -56,6 +56,7 @@
     <Content Include="CompraRealizada.aspx" />
     <Content Include="Contacto.aspx" />
     <Content Include="Contenido\1f60a.png" />
+    <Content Include="Contenido\64899cde-44ba-4bb1-af31-6ae2fe4e58bb.JPG" />
     <Content Include="Contenido\9562bf9d794f3d8d59f7e3fde205fdc4.jpg" />
     <Content Include="Contenido\apps.3104.14481483800220513.5d6b67d5-bde5-4f6b-9e61-27c8013e2ec6.png" />
     <Content Include="Contenido\Captura de pantalla 2025-09-02 201137.png" />
@@ -67,6 +68,7 @@
     <Content Include="Contenido\css\bootstrap\_media.css" />
     <Content Include="Contenido\css\style.css" />
     <Content Include="Contenido\descarga.jpg" />
+    <Content Include="Contenido\fondo_login.jpg" />
     <Content Include="Contenido\images\fotos de productos\8509b217-ce6d-4c58-ab9f-e8e05607a40a.JPG" />
     <Content Include="Contenido\images\fotos de productos\bf732764-e779-4c94-aab8-935bcf1f5c9f.JPG" />
     <Content Include="Contenido\images\fotos de productos\IMG_6373.PNG" />
@@ -90,12 +92,14 @@
     <Content Include="Contenido\Login\js\jquery.min.js" />
     <Content Include="Contenido\Login\js\main.js" />
     <Content Include="Contenido\Login\js\popper.js" />
+    <Content Include="Contenido\pastry-and-bakery-banner-illustration-wallpaper-background-line-art-vector.jpg" />
     <Content Include="Contenido\una emprendedora que.png" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Inicio.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Moda.aspx" />
+    <Content Include="pastry-and-bakery-banner-illustration-wallpaper-background-line-art-vector.jpg" />
     <Content Include="Prueba.aspx" />
     <Content Include="Vista.aspx" />
     <Content Include="Web.config">
@@ -116,6 +120,7 @@
     <Compile Include="Carrito.aspx.designer.cs">
       <DependentUpon>Carrito.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CarritoItem.cs" />
     <Compile Include="Compra.aspx.cs">
       <DependentUpon>Compra.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -175,6 +180,7 @@
     <Compile Include="Principal.Master.designer.cs">
       <DependentUpon>Principal.Master</DependentUpon>
     </Compile>
+    <Compile Include="ProductoCarrito.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Prueba.aspx.cs">
       <DependentUpon>Prueba.aspx</DependentUpon>

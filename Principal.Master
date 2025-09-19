@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="Contenido/css/style.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
+<body <%--style="background-image: url('/pastry-and-bakery-banner-illustration-wallpaper-background-line-art-vector.jpg')"--%>><%-- //si descomentamos esta linea se nos pone una imagen de fondo, no la borre para q sepamos como se pone--%>
+
     <div class="wrapper d-flex align-items-stretch">
         <nav id="sidebar">
 				<div class="custom-menu">

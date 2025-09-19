@@ -18,7 +18,7 @@
             <asp:Label ID="lblTitulo" runat="server" Text="Budin de Chocolate" CssClass="tituloImagen"
                 Width="300px" />
 
-            <asp:ImageButton ID="imgProducto" runat="server" ImageUrl="~/Contenido/descarga.jpg"
+            <asp:ImageButton ID="imgProducto" runat="server" ImageUrl="~/Contenido/64899cde-44ba-4bb1-af31-6ae2fe4e58bb.JPG"
                 Width="200"/><br />
             <asp:Label ID="lblNombre" runat="server" Text="BUDIN DE CHOCOLATE" Font-Bold="true" /><br />
            
@@ -31,7 +31,7 @@
             ontextchanged="txtCantidad_TextChanged" /><br />
             
            <asp:Button ID="btnConfirmar2" runat="server" Text="Agregar Producto" CommandArgument="BUDIN DE CHOCOLATE"
-                OnClick="btnConfirmar_Click" OnClientClick="return confirm('¿Estás seguro de que querés agregar este producto al carrito?');" />
+                OnClick="btnConfirmar_Click" OnClientClick="return confirm('¿Estás seguro de que querés agregar este producto al carrito?');" /> <br />
          
             <!-- Descripción debajo -->
 
@@ -66,38 +66,40 @@
         <br />
             <br />
             <asp:Button ID="Button1" runat="server" Text="Agregar Producto" CommandArgument="SCONES DE QUESO"
-                OnClick="btnConfirmar_Click2" OnClientClick="return confirm('¿Estás seguro de que querés agregar este producto al carrito?');" />
+                OnClick="btnConfirmar_Click2" OnClientClick="return confirm('¿Estás seguro de que querés agregar este producto al carrito?');" /><br />
            
             <!-- Descripción debajo -->
 
 
 
             <!--otro producto-->
+        
+          <br />
+        <asp:Panel ID="Panel2" runat="server" Width="300px">
+           
+            <!-- Título arriba -->
+
+            <asp:Label ID="Label1" runat="server" Text="Alfajorcitos de Maicena" CssClass="tituloImagen"
+                Width="300px" />
+            <!-- Imagen en el medio -->
+
+
+            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Contenido/images/fotos de productos/IMG_6374.PNG"
+                Width="200" /><br />
+            <asp:Label ID="Label4" runat="server" Text="ALFAJORCITOS DE MAICENA" Font-Bold="true" />
+            
+            <br /><asp:Label ID="Label6" runat="server" Text="Excelentes para el bajon !."
+                CssClKGass="descripcionImagen" Width="300px" />
+        </asp:Panel>
+            Cantidad:
+         
+        <asp:TextBox ID="TextBox2" runat="server" Text="1" Width="50" 
+            ontextchanged="TextBox1_TextChanged"></asp:TextBox>
         <br />
-        <asp:Panel ID="PanelAlfajores" runat="server" Width="300px">
-    <!-- Título -->
-    <asp:Label ID="lblTituloAlfajores" runat="server" Text="Alfajorcitos de Maicena" CssClass="tituloImagen" Width="300px" />
-
-    <!-- Imagen -->
-    <asp:ImageButton ID="imgAlfajores" runat="server" ImageUrl="~/Contenido/images/fotos de productos/IMG_6374.PNG" Width="200" /><br />
-
-    <!-- Nombre del producto -->
-    <asp:Label ID="lblNombreAlfajores" runat="server" Text="ALFAJORES DE MAICENA" Font-Bold="true" /><br />
-
-    <!-- Descripción -->
-    <asp:Label ID="lblDescripcionAlfajores" runat="server" Text="Excelentes para el bajón!!." CssClass="descripcionImagen" Width="300px" /><br />
-
-    <!-- Cantidad -->
-    Cantidad:
-    <asp:TextBox ID="txtCantidadAlfajores" runat="server" Text="1" Width="50" /><br /><br />
-
-    <!-- Botón con popup -->
-    <asp:Button ID="btnConfirmarAlfajores" runat="server"
-        Text="Agregar Producto"
-        CommandArgument="ALFAJORCITOS DE MAICENA"
-        OnClick="btnConfirmar_Click"
-        OnClientClick="mostrarPopup(this); return false;" />
-</asp:Panel>
+            <br />
+            <asp:Button ID="Button2" runat="server" Text="Agregar Producto" CommandArgument="ALFAJORCITOS DE MAICENA"
+                OnClick="btnConfirmar_Click3" OnClientClick="return confirm('¿Estás seguro de que querés agregar este producto al carrito?');" />
+           
             <!-- Descripción debajo -->
 
             

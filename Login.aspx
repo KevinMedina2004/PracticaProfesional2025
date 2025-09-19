@@ -2,7 +2,7 @@
 
 <html lang="es">
 <head>
-    <title>Login 05</title>
+    <title>Bienvenidos!</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap"
@@ -21,7 +21,7 @@
 			<div class="row justify-content-center">
 				<div class="col-md-7 col-lg-5">
 					<div class="wrap">
-						<div class="img" style="background-image: url(Contenido/Login/images/kh_logo.png);"></div>
+						<div class="img" style="background-image: url('Contenido/fondo_login.jpg');"></div>
 						<div class="login-wrap p-4 p-md-5">
 			      	<div class="d-flex">
 			      		<div class="w-100">
@@ -34,7 +34,7 @@
 									--%></p>
 								</div>
 			      	</div>
-							<form action="#" class="signin-form" runat="server">
+							<form id="Form1" action="#" class="signin-form" runat="server">
 			      		<div class="form-group mt-3">
 			      			<%--<input type="text" class="form-control" required>--%>
                             <asp:textbox id="txtUsuario" class="form-control" runat="server" /> 

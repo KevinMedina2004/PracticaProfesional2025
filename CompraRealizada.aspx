@@ -16,6 +16,10 @@
 </asp:Repeater>
 <br /><br />
 <asp:Button ID="btnSeguirComprando" runat="server" Text="🛍️ Seguir comprando" OnClick="btnSeguirComprando_Click" />
+<asp:Button ID="btnGuardarCompra" runat="server" 
+    Text="💾 Guardar compra" 
+    OnClick="btnGuardarCompra_Click" />
+
     </form>
 </body>
 </html>

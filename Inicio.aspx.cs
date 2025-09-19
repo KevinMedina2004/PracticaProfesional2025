@@ -1,4 +1,17 @@
-﻿using System; using System.Collections.Generic; using System.Linq; using System.Web; using System.Web.UI; using System.Web.UI.WebControls; using System; using System.Collections.Generic; using System.Linq; using System.Web; using System.Web.UI; using System.Web.UI.WebControls; using System.Data.SqlClient; using System.Configuration;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Configuration;
 namespace PracticaProfesional2025
 {
     public partial class Inicio : System.Web.UI.Page
@@ -32,9 +45,11 @@ namespace PracticaProfesional2025
                 int.TryParse(txtCantidad.Text, out cantidad);
             }
 
-            var item = new { Nombre = producto, Cantidad = cantidad };
+            // crear instancia del tipo fuerte
+            CarritoItem item = new CarritoItem { Nombre = producto, Cantidad = cantidad };
 
-            List<dynamic> carrito = Session["Carrito"] as List<dynamic> ?? new List<dynamic>();
+            // usar List<CarritoItem> en Session
+            List<CarritoItem> carrito = Session["Carrito"] as List<CarritoItem> ?? new List<CarritoItem>();
             carrito.Add(item);
             Session["Carrito"] = carrito;
 
@@ -64,9 +79,11 @@ namespace PracticaProfesional2025
                 int.TryParse(TextBox1.Text, out cantidad);
             }
 
-            var item = new { Nombre = producto, Cantidad = cantidad };
+            // crear instancia del tipo fuerte
+            CarritoItem item = new CarritoItem { Nombre = producto, Cantidad = cantidad };
 
-            List<dynamic> carrito = Session["Carrito"] as List<dynamic> ?? new List<dynamic>();
+            // usar List<CarritoItem> en Session
+            List<CarritoItem> carrito = Session["Carrito"] as List<CarritoItem> ?? new List<CarritoItem>();
             carrito.Add(item);
             Session["Carrito"] = carrito;
 
@@ -136,9 +153,40 @@ namespace PracticaProfesional2025
 
         }
 
-   
 
-    
+        protected void btnConfirmar_Click3(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            string producto = btn.CommandArgument;
+
+            Control contenedor = btn.NamingContainer;
+            TextBox textbox2 = null;
+
+            foreach (Control ctrl in contenedor.Controls)
+            {
+                if (ctrl is TextBox)
+                {
+                    textbox2 = (TextBox)ctrl;
+                    break;
+                }
+            }
+
+            int cantidad = 1;
+            if (textbox2 != null)
+            {
+                int.TryParse(TextBox2.Text, out cantidad);
+            }
+
+            // crear instancia del tipo fuerte
+            CarritoItem item = new CarritoItem { Nombre = producto, Cantidad = cantidad };
+
+            // usar List<CarritoItem> en Session
+            List<CarritoItem> carrito = Session["Carrito"] as List<CarritoItem> ?? new List<CarritoItem>();
+            carrito.Add(item);
+            Session["Carrito"] = carrito;
+            Response.Redirect("CompraRealizada.aspx");
+        }
+
 
 
     }

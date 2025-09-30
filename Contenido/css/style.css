@@ -56,6 +56,90 @@ html {
   box-sizing: border-box;
 }
 
+/* Fondo cálido tipo panadería */
+body.compra-realizada {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f8e1c4, #f6d6ad);
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor central */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #fff8f0;
+    border: 2px solid #e0b084;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0px 4px 10px rgba(120, 72, 30, 0.2);
+    text-align: center;
+}
+
+/* Título */
+.container h2 {
+    color: #6b3e26;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Productos en la lista */
+.producto-item {
+    background: #fff;
+    border: 1px solid #e0b084;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #4a2c1a;
+}
+
+.producto-item .nombre {
+    font-weight: bold;
+}
+
+.producto-item .cantidad {
+    color: #6b3e26;
+}
+
+/* Botones */
+.acciones {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn-panaderia, .btn-guardar {
+    background-color: #d9a066;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-panaderia:hover, .btn-guardar:hover {
+    background-color: #b77d42;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .descripcionImagen {
   display: block;
   text-align: center;

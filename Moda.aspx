@@ -39,7 +39,7 @@
             <asp:Button ID="Button3" runat="server" Text="Agregar Producto" CommandArgument="DIJE DE CIELO"
                 OnClick="btnCIELO_Click2" OnClientClick="return confirm('¿Estás seguro de que querés agregar este producto al carrito?');" /><br />
            
-            <!-- Descripción debajo -->
+            <!-- aca cierra este producto -->
 
          
 

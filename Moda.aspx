@@ -11,8 +11,9 @@
       
      
      
-       <br />
-        <asp:Panel ID="PanelDIJECIELO" runat="server" Width="300px">
+       <br />  
+        <div class="productos-container">
+        <asp:Panel ID="PanelDIJECIELO" runat="server" Width="300px"  CssClass="producto-panel">
            
             <!-- Título arriba -->
 
@@ -29,6 +30,7 @@
             <br /><asp:Label ID="Label9" runat="server" Text="Belleza asegurada!."
                 CssClKGass="descripcionImagen" Width="300px" />
         </asp:Panel>
+        </div>
             Cantidad:
           <%--  <asp:TextBox ID="TextBox1" runat="server" Text="1" Width="50" 
             ontextchanged="TextBox1_TextChanged" />--%>

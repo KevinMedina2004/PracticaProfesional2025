@@ -7,7 +7,6 @@ using System;
 
 namespace PracticaProfesional2025
 {
-    [Serializable]   // útil si la sesión se serializa
     public class CarritoItem
     {
         public string Nombre { get; set; }

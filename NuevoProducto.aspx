@@ -18,11 +18,11 @@
             <asp:TextBox ID="txtDescripcion" runat="server" TextMode="MultiLine" Rows="4" Width="300px" /><br /><br />
 
            <asp:Label ID="lblImagen" runat="server" Text="Subir imagen:" />
-<asp:FileUpload ID="fuImagen" runat="server" /><br /><br />
+<asp:FileUpload ID="fuImagen" runat="server"   CssClass="btn-panaderia" /><br /><br />
 
 <asp:Button ID="btnVolver" runat="server" Text="Volver a Inicio" 
     OnClick="btnVolver_Click" 
-    CausesValidation="false"  CssClass="btn-panaderia" />
+    CausesValidation="false"  CssClass="btn-panaderia" /><br />
              </br>
             <asp:Button ID="btnGuardar" runat="server" Text="Guardar Producto" OnClick="btnGuardar_Click" CssClass="btn-panaderia" />
         </div>

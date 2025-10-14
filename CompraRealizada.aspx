@@ -87,5 +87,7 @@
             <asp:Button ID="btnGuardarCompra" runat="server" Text="💾 Guardar compra" OnClick="btnGuardarCompra_Click" CssClass="btn-guardar" />
         </div>
     </form>
+    
+  
 </body>
 </html>

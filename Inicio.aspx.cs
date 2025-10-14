@@ -75,6 +75,9 @@ namespace PracticaProfesional2025
             carrito.Add(carritoItem);
             Session["Carrito"] = carrito;
 
+            // Actualiza contador del master page
+            ((Principal)Master).ActualizarContadorCarrito();
+
             Response.Redirect("CompraRealizada.aspx");
         }
     }

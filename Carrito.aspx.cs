@@ -11,13 +11,19 @@ namespace PracticaProfesional2025
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var carrito = Session["Carrito"] as List<dynamic>;
-            if (carrito != null)
+            if (!IsPostBack)
             {
-                rptCarrito.DataSource = carrito;
-                rptCarrito.DataBind();
-
+                var carrito = Session["Carrito"] as List<CarritoItem>;
+                if (carrito != null)
+                {
+                    rptCarrito.DataSource = carrito;
+                    rptCarrito.DataBind();
+                }
             }
         }
-    }
+        protected void btnSeguir_Click(object sender, EventArgs e)
+        {
+                Response.Redirect("Inicio.aspx");
+        }   
+}
 }

@@ -102,6 +102,7 @@
     <Content Include="Contenido\Login\js\main.js" />
     <Content Include="Contenido\Login\js\popper.js" />
     <Content Include="Contenido\pastry-and-bakery-banner-illustration-wallpaper-background-line-art-vector.jpg" />
+    <Content Include="Contenido\sounds\money-soundfx.mp3" />
     <Content Include="Contenido\una emprendedora que.png" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />

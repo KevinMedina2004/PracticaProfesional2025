@@ -7,82 +7,45 @@
     <title>Feria</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="Contenido/css/style.css" rel="stylesheet" type="text/css" />
 </head>
-<body <%--style="background-image: url('/pastry-and-bakery-banner-illustration-wallpaper-background-line-art-vector.jpg')"--%>><%-- //si descomentamos esta linea se nos pone una imagen de fondo, no la borre para q sepamos como se pone--%>
-
+<body>
     <div class="wrapper d-flex align-items-stretch">
         <nav id="sidebar">
-				<div class="custom-menu">
-					<button type="button" id="sidebarCollapse" class="btn btn-primary">
-	          <i class="fa fa-bars"></i>
-	          <span class="sr-only">Toggle Menu</span>
-	        </button>
-        </div>
-				<div class="p-4">
-                 <asp:Image ID="Image1" runat="server" Height="118px" Width="148px" ImageUrl="~/Contenido/una emprendedora que.png" 
-                        ></asp:Image>
-		  		<%--<h1><a href="index.html" class="logo">Vent<span>2025</span></a></h1>--%>
-	        <ul class="list-unstyled components mb-5">
-	          <li class="active">
-	            <a href="Inicio.aspx"><span ></span> ☕   Para Merendar </a>
-	          </li>
-	          <li>
-	              <a href="Moda.aspx"><span ></span> 💍    Moda </a>
-	          </li>
-	          <li>
-              <a href="Vista.aspx"><span ></span> ⚱️    Perfumeria </a>
-	          </li>
-	          <li>
-              <a href="#"><span ></span> 🍰   Postres </a>
-	          </li> 
+            <div class="custom-menu">
+                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                    <i class="fa fa-bars"></i>
+                    <span class="sr-only">Toggle Menu</span>
+                </button>
+            </div>
+            <div class="p-4">
+                <asp:Image ID="Image1" runat="server" Height="118px" Width="148px" ImageUrl="~/Contenido/una emprendedora que.png" />
+                <ul class="list-unstyled components mb-5">
+                    <li class="active"><a href="Inicio.aspx"> ☕ Para Merendar </a></li>
+                    <li><a href="Moda.aspx"> 💍 Moda </a></li>
+                    <li><a href="Vista.aspx"> ⚱️ Perfumeria </a></li>
+                    <li><a href="#"> 🍰 Postres </a></li>
+                    <li><a href="NuevoProducto.aspx"> ➕ Agregar Producto </a></li>
+                    <li><a href="Contacto.aspx"> 📲 Contacto </a></li>
+                </ul>
+            </div>
+        </nav>
 
-               <%--<li>
-              <a href="#"><span class="fa fa-sticky-note mr-3"></span> 🤗 Artesanias </a>
-	          </li> lo dejamos diferenciado porque asi estaban los iconos antes, por ahora usamos emojis copiados y pegados como texto
-              y no usando la libreria de awesome icons
---%>
-
-	          <li>
-              <a href="NuevoProducto.aspx"><span></span>➕   Agregar Producto  </a>
-	          </li>
-	         <%-- <li>
-              <a href="#"><span class="fa fa-cogs mr-3"></span>  </a>
-	          </li>--%>
-	          <li>
-              <a href="Contacto.aspx"><span ></span> 📲   Contacto </a>
-	          </li>
-	        </ul>
-
-	        <div class="mb-5">
-						<%--<h3 class="h6 mb-3">Subscribe for newsletter</h3>
-						<form action="#" class="subscribe-form">--%>
-	            <div class="form-group d-flex">
-	            	<div class="icon"><span class="icon-paper-plane"></span></div>
-	              <%--<input type="text" class="form-control" placeholder="Enter Email Address">--%>
-	            </div>
-	          </form>
-					</div>
-
-	        <div class="footer">
-	        	<%--<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						  Copyright &copy;<script>						                      document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
-						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>--%>
-	        </div>
-
-	      </div>
-    	</nav>
         <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+     <div class="btn-carrito-container">
+    <asp:Button ID="btnCarrito" runat="server" CssClass="btn-carrito" Text="🛒" OnClick="btnCarrito_Click" />
+    <asp:Label ID="lblContadorCarrito" runat="server" CssClass="contador"></asp:Label>
+ 
 
-            </asp:ContentPlaceHolder>
-        </div>
+
+           
+            </div>     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
         </form>
     </div>
+
     <script src="Contenido/js/jquery.min.js"></script>
     <script src="Contenido/js/popper.js"></script>
     <script src="Contenido/js/bootstrap.min.js"></script>

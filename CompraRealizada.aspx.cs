@@ -21,7 +21,7 @@ namespace PracticaProfesional2025
             }
         }
 
-        protected void btnSeguirComprando_Click(object sender, EventArgs e)
+        protected void btnSeguir_Click(object sender, EventArgs e)
         {
             Response.Redirect("Inicio.aspx");
         }

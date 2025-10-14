@@ -1,193 +1,81 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Data.SqlClient;
 using System.Configuration;
+using System.Data.SqlClient;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
 namespace PracticaProfesional2025
 {
-    public partial class Inicio : System.Web.UI.Page
+    public partial class Inicio : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-
+            if (!IsPostBack)
+            {
+                CargarProductosDesdeBD();
+            }
         }
 
-        protected void btnConfirmar_Click(object sender, EventArgs e)
+        public class Producto
         {
-            Button btn = (Button)sender;
-            string producto = btn.CommandArgument;
+            public string Nombre { get; set; }
+            public string Descripcion { get; set; }
+            public string ImagenUrl { get; set; }
+        }
 
-            Control contenedor = btn.NamingContainer;
-            TextBox txtCantidad = null;
+        private void CargarProductosDesdeBD()
+        {
+            string connStr = ConfigurationManager.ConnectionStrings["CadenaPP2025"].ConnectionString;
+            var productos = new List<Producto>();
 
-            foreach (Control ctrl in contenedor.Controls)
+            using (SqlConnection conn = new SqlConnection(connStr))
             {
-                if (ctrl is TextBox)
+                conn.Open();
+                string query = "SELECT Nombre, Descripcion, ImagenUrl FROM productos_disponibles";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
                 {
-                    txtCantidad = (TextBox)ctrl;
-                    break;
+                    productos.Add(new Producto
+                    {
+                        Nombre = reader["Nombre"].ToString(),
+                        Descripcion = reader["Descripcion"].ToString(),
+                        ImagenUrl = reader["ImagenUrl"].ToString()
+                    });
                 }
             }
 
+            rptProductos.DataSource = productos;
+            rptProductos.DataBind();
+        }
+
+        protected void AgregarAlCarrito_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn == null) return;
+
+            RepeaterItem item = (RepeaterItem)btn.NamingContainer;
+            string nombreProducto = btn.CommandArgument;
+
+            TextBox txtCantidad = item.FindControl("txtCantidad") as TextBox;
             int cantidad = 1;
             if (txtCantidad != null)
             {
                 int.TryParse(txtCantidad.Text, out cantidad);
             }
 
-            // crear instancia del tipo fuerte
-            CarritoItem item = new CarritoItem { Nombre = producto, Cantidad = cantidad };
+            CarritoItem carritoItem = new CarritoItem
+            {
+                Nombre = nombreProducto,
+                Cantidad = cantidad
+            };
 
-            // usar List<CarritoItem> en Session
             List<CarritoItem> carrito = Session["Carrito"] as List<CarritoItem> ?? new List<CarritoItem>();
-            carrito.Add(item);
+            carrito.Add(carritoItem);
             Session["Carrito"] = carrito;
 
             Response.Redirect("CompraRealizada.aspx");
         }
-
-        protected void btnConfirmar_Click2(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            string producto = btn.CommandArgument;
-
-            Control contenedor = btn.NamingContainer;
-            TextBox textbox1 = null;
-
-            foreach (Control ctrl in contenedor.Controls)
-            {
-                if (ctrl is TextBox)
-                {
-                    textbox1 = (TextBox)ctrl;
-                    break;
-                }
-            }
-
-            int cantidad = 1;
-            if (textbox1 != null)
-            {
-                int.TryParse(TextBox1.Text, out cantidad);
-            }
-
-            // crear instancia del tipo fuerte
-            CarritoItem item = new CarritoItem { Nombre = producto, Cantidad = cantidad };
-
-            // usar List<CarritoItem> en Session
-            List<CarritoItem> carrito = Session["Carrito"] as List<CarritoItem> ?? new List<CarritoItem>();
-            carrito.Add(item);
-            Session["Carrito"] = carrito;
-
-            Response.Redirect("CompraRealizada.aspx");
-        }
-
-
-
-
-
-
-        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
-        {
-            string nombreProducto = "Producto1"; // Cambiá según el producto
-
-            //if (Session["UsuarioMail"] == null)
-            //{
-            //     Guardamos la URL de destino con el producto
-            //    Session["RedirectAfterLogin"] = "Compra.aspx";
-            //    Response.Redirect("Login.aspx");
-            //}
-            //else
-            //{
-            //     Si ya está logueado, va directo a la compra
-            Response.Redirect("Compra.aspx?nombre=" + nombreProducto);
-        }
-
-        protected void imgProducto_Click(object sender, System.Web.UI.ImageClickEventArgs e)
-        {
-            string nombreProducto = "Producto1"; // Cambiá según el producto
-
-            //if (Session["UsuarioMail"] == null)
-            //{
-            //     Guardamos la URL de destino con el producto
-            //    Session["RedirectAfterLogin"] = "Compra.aspx";
-            //    Response.Redirect("Login.aspx");
-            //}
-            //else
-            //{
-            //     Si ya está logueado, va directo a la compra
-            Response.Redirect("Compra.aspx?nombre=" + nombreProducto);
-        }
-
-        protected void imgProducto_Click1(object sender, System.Web.UI.ImageClickEventArgs e)
-        {
-            string nombreProducto = "Producto1"; // Cambiá según el producto
-
-            //if (Session["UsuarioMail"] == null)
-            //{
-            //     Guardamos la URL de destino con el producto
-            //    Session["RedirectAfterLogin"] = "Compra.aspx";
-            //    Response.Redirect("Login.aspx");
-            //}
-            //else
-            //{
-            //     Si ya está logueado, va directo a la compra
-            Response.Redirect("CompraRealizada.aspx?nombre=" + nombreProducto);
-        }
-
-        protected void txtCantidad_TextChanged(object sender, System.EventArgs e)
-        {
-
-        }
-
-        protected void TextBox1_TextChanged(object sender, System.EventArgs e)
-        {
-
-        }
-
-
-        protected void btnConfirmar_Click3(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            string producto = btn.CommandArgument;
-
-            Control contenedor = btn.NamingContainer;
-            TextBox textbox2 = null;
-
-            foreach (Control ctrl in contenedor.Controls)
-            {
-                if (ctrl is TextBox)
-                {
-                    textbox2 = (TextBox)ctrl;
-                    break;
-                }
-            }
-
-            int cantidad = 1;
-            if (textbox2 != null)
-            {
-                int.TryParse(TextBox2.Text, out cantidad);
-            }
-
-            // crear instancia del tipo fuerte
-            CarritoItem item = new CarritoItem { Nombre = producto, Cantidad = cantidad };
-
-            // usar List<CarritoItem> en Session
-            List<CarritoItem> carrito = Session["Carrito"] as List<CarritoItem> ?? new List<CarritoItem>();
-            carrito.Add(item);
-            Session["Carrito"] = carrito;
-            Response.Redirect("CompraRealizada.aspx");
-        }
-
-
-
     }
 }

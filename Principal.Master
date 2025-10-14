@@ -37,7 +37,7 @@
               <a href="Vista.aspx"><span ></span> ⚱️    Perfumeria </a>
 	          </li>
 	          <li>
-              <a href="#"><span ></span> 🤗   Artesanias </a>
+              <a href="#"><span ></span> 🍰   Postres </a>
 	          </li> 
 
                <%--<li>
@@ -47,7 +47,7 @@
 --%>
 
 	          <li>
-              <a href="#"><span></span> 🍰   Postres </a>
+              <a href="NuevoProducto.aspx"><span></span>➕   Agregar Producto  </a>
 	          </li>
 	         <%-- <li>
               <a href="#"><span class="fa fa-cogs mr-3"></span>  </a>

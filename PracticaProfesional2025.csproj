@@ -108,6 +108,7 @@
     <Content Include="Inicio.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Moda.aspx" />
+    <Content Include="NuevoProducto.aspx" />
     <Content Include="pastry-and-bakery-banner-illustration-wallpaper-background-line-art-vector.jpg" />
     <Content Include="Prueba.aspx" />
     <Content Include="Vista.aspx" />
@@ -181,6 +182,13 @@
     </Compile>
     <Compile Include="Moda.aspx.designer.cs">
       <DependentUpon>Moda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NuevoProducto.aspx.cs">
+      <DependentUpon>NuevoProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NuevoProducto.aspx.designer.cs">
+      <DependentUpon>NuevoProducto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Principal.Master.cs">
       <DependentUpon>Principal.Master</DependentUpon>
@@ -416,7 +424,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>49428</DevelopmentServerPort>
+          <DevelopmentServerPort>35303</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

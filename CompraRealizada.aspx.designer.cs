@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace PracticaProfesional2025 {
-    
-    
-    public partial class CompraRealizada {
-        
+namespace PracticaProfesional2025
+{
+
+
+    public partial class CompraRealizada
+    {
+
         /// <summary>
         /// Control Head1.
         /// </summary>
@@ -20,7 +22,7 @@ namespace PracticaProfesional2025 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
-        
+
         /// <summary>
         /// Control form1.
         /// </summary>
@@ -29,7 +31,7 @@ namespace PracticaProfesional2025 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// Control rptCarrito.
         /// </summary>
@@ -38,7 +40,7 @@ namespace PracticaProfesional2025 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptCarrito;
-        
+
         /// <summary>
         /// Control btnSeguirComprando.
         /// </summary>
@@ -47,7 +49,7 @@ namespace PracticaProfesional2025 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSeguirComprando;
-        
+
         /// <summary>
         /// Control gvCarrito.
         /// </summary>
@@ -56,7 +58,7 @@ namespace PracticaProfesional2025 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvCarrito;
-        
+
         /// <summary>
         /// Control btnConfirmarCompra.
         /// </summary>

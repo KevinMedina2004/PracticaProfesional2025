@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace PracticaProfesional2025 {
-    
-    
-    public partial class Inicio {
-        
+namespace PracticaProfesional2025
+{
+
+
+    public partial class Inicio
+    {
+
         /// <summary>
         /// Control rptProductos.
         /// </summary>

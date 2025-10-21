@@ -7,56 +7,72 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace PracticaProfesional2025
-{
-
-
-    public partial class Principal
-    {
-
+namespace PracticaProfesional2025 {
+    
+    
+    public partial class Postres {
+        
         /// <summary>
-        /// Control Image1.
+        /// Control PanelLEMONPIE.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
-
+        protected global::System.Web.UI.WebControls.Panel PanelLEMONPIE;
+        
         /// <summary>
-        /// Control form1.
+        /// Control LabelLEMONPIE.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        protected global::System.Web.UI.WebControls.Label LabelLEMONPIE;
+        
         /// <summary>
-        /// Control btnCarrito.
+        /// Control ImageButtonLEMONPIE.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCarrito;
-
+        protected global::System.Web.UI.WebControls.ImageButton ImageButtonLEMONPIE;
+        
         /// <summary>
-        /// Control lblContadorCarrito.
+        /// Control Label8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblContadorCarrito;
-
+        protected global::System.Web.UI.WebControls.Label Label8;
+        
         /// <summary>
-        /// Control ContentPlaceHolder1.
+        /// Control Label9.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Label Label9;
+        
+        /// <summary>
+        /// Control TextBoxLEMONPIE.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxLEMONPIE;
+        
+        /// <summary>
+        /// Control Button3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button3;
     }
 }

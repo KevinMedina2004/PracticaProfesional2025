@@ -74,7 +74,7 @@ namespace PracticaProfesional2025
             // Limpiar carrito
             Session["Carrito"] = null;
 
-            Response.Write("<script>alert('Compra guardada con éxito en la base de datos.');</script>");
+            Response.Write("<script>alert('Compra realizada exitosamente!.');</script>");
         }
     }
 }

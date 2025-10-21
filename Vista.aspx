@@ -14,7 +14,7 @@
                 <asp:BoundField DataField="DNI" HeaderText="DNI" SortExpression="DNI" />
             </Columns>
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CadenaPP2025 %>"
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%--$ ConnectionStrings:CadenaPP2025--%> "
             SelectCommand="SELECT * FROM [USUARIO]"></asp:SqlDataSource>
     </div>
 </asp:Content>

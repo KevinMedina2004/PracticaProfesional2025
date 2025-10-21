@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace PracticaProfesional2025 {
-    
-    
-    public partial class Carrito {
-        
+namespace PracticaProfesional2025
+{
+
+
+    public partial class Carrito
+    {
+
         /// <summary>
         /// Control form1.
         /// </summary>
@@ -20,7 +22,7 @@ namespace PracticaProfesional2025 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// Control rptCarrito.
         /// </summary>

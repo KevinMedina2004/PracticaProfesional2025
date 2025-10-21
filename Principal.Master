@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="Contenido/css/style.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
+<body background-color="red">
     <div class="wrapper d-flex align-items-stretch">
         <nav id="sidebar">
             <div class="custom-menu">
@@ -25,8 +25,8 @@
                 <ul class="list-unstyled components mb-5">
                     <li class="active"><a href="Inicio.aspx"> ☕ Para Merendar </a></li>
                     <li><a href="Moda.aspx"> 💍 Moda </a></li>
-                    <li><a href="Vista.aspx"> ⚱️ Perfumeria </a></li>
-                    <li><a href="#"> 🍰 Postres </a></li>
+                    <li><a href="Perfumeria.aspx"> ⚱️ Perfumeria </a></li>
+                    <li><a href="Postres.aspx"> 🍰 Postres </a></li>
                     <li><a href="NuevoProducto.aspx"> ➕ Agregar Producto </a></li>
                     <li><a href="Contacto.aspx"> 📲 Contacto </a></li>
                 </ul>

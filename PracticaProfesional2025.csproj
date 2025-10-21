@@ -83,6 +83,7 @@
     <Content Include="Contenido\images\fotos de productos\lemon_pie.jpeg" />
     <Content Include="Contenido\images\fotos de productos\pulsera_multicolor.jpeg" />
     <Content Include="Contenido\images\fotos de productos\tarta_frutillas.jpeg" />
+    <Content Include="Contenido\images\YfGAQv.jpg" />
     <Content Include="Contenido\js\bootstrap.min.js" />
     <Content Include="Contenido\js\jquery.min.js" />
     <Content Include="Contenido\js\main.js" />
@@ -111,6 +112,8 @@
     <Content Include="Moda.aspx" />
     <Content Include="NuevoProducto.aspx" />
     <Content Include="pastry-and-bakery-banner-illustration-wallpaper-background-line-art-vector.jpg" />
+    <Content Include="Perfumeria.aspx" />
+    <Content Include="Postres.aspx" />
     <Content Include="Prueba.aspx" />
     <Content Include="Vista.aspx" />
     <Content Include="Web.config">
@@ -190,6 +193,20 @@
     </Compile>
     <Compile Include="NuevoProducto.aspx.designer.cs">
       <DependentUpon>NuevoProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Perfumeria.aspx.cs">
+      <DependentUpon>Perfumeria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Perfumeria.aspx.designer.cs">
+      <DependentUpon>Perfumeria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Postres.aspx.cs">
+      <DependentUpon>Postres.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Postres.aspx.designer.cs">
+      <DependentUpon>Postres.aspx</DependentUpon>
     </Compile>
     <Compile Include="Principal.Master.cs">
       <DependentUpon>Principal.Master</DependentUpon>

@@ -1,19 +1,28 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Contacto.aspx.cs" Inherits="PracticaProfesional2025.Contacto" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>Contacto</title>
+    <link rel="stylesheet" href="Contenido/css/style.css" />
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
-    <h1>Bienvenidos a la pagina de contacto</h1> <br />
-     
-        <asp:Image ID="Image1" runat="server" 
-            ImageUrl="~/Contenido/Captura de pantalla 2025-09-02 201137.png" />
+ 
+    <div class="contact-container">
+        <h2>Contáctanos</h2>
+       
+        <form id="form1" runat="server">
+            <asp:TextBox ID="txtNombre" runat="server" placeholder="Tu nombre"></asp:TextBox>
+            <asp:TextBox ID="txtEmail" runat="server" placeholder="Tu email"></asp:TextBox>
+            <asp:TextBox ID="txtAsunto" runat="server" placeholder="Asunto"></asp:TextBox>
+            <asp:TextBox ID="txtMensaje" TextMode="MultiLine" Rows="5" runat="server" placeholder="Tu mensaje"></asp:TextBox>
+            <img src="Contenido/images/YfGAQv.jpg" width="200px" height="200px" style="text-align: center" />
+            <asp:Button ID="btnEnviar" CssClass="aspNetButton" Text="Enviar" runat="server" OnClick="btnEnviar_Click" />
+            <asp:Button ID="btnLimpiar" CssClass="aspNetButton" Text="Limpiar" runat="server" OnClick="btnLimpiar_Click" />
+            
+            <asp:Label ID="lblResultado" runat="server" />
+        </form>
     </div>
-    </form>
 </body>
 </html>

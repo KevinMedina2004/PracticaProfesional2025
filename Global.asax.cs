@@ -17,7 +17,7 @@ namespace PracticaProfesional2025
 
         protected void Session_Start(object sender, EventArgs e)
         {
-                Session["Usuario"] = String.Empty;
+            Session["Usuario"] = String.Empty;
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

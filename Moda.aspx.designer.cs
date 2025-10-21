@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace PracticaProfesional2025 {
-    
-    
-    public partial class Moda {
-        
+namespace PracticaProfesional2025
+{
+
+
+    public partial class Moda
+    {
+
         /// <summary>
         /// Control PanelDIJECIELO.
         /// </summary>
@@ -20,7 +22,7 @@ namespace PracticaProfesional2025 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel PanelDIJECIELO;
-        
+
         /// <summary>
         /// Control LabelDIJECIELO.
         /// </summary>
@@ -29,7 +31,7 @@ namespace PracticaProfesional2025 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelDIJECIELO;
-        
+
         /// <summary>
         /// Control ImageButtonDIJECIELO.
         /// </summary>
@@ -38,7 +40,7 @@ namespace PracticaProfesional2025 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton ImageButtonDIJECIELO;
-        
+
         /// <summary>
         /// Control Label8.
         /// </summary>
@@ -47,7 +49,7 @@ namespace PracticaProfesional2025 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label8;
-        
+
         /// <summary>
         /// Control Label9.
         /// </summary>
@@ -56,7 +58,7 @@ namespace PracticaProfesional2025 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label9;
-        
+
         /// <summary>
         /// Control TextBoxDIJECIELO.
         /// </summary>
@@ -65,7 +67,7 @@ namespace PracticaProfesional2025 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxDIJECIELO;
-        
+
         /// <summary>
         /// Control Button3.
         /// </summary>

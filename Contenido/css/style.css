@@ -114,6 +114,164 @@ body.compra-realizada {
 
 
 
+.nuevo-producto-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #fdfdfd;
+}
+
+.titulo {
+    text-align: center;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.input-text, .input-textarea, .ddl-seccion, .input-file {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.botones {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-agregar, .btn-volver {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.btn-agregar {
+    background-color: #28a745;
+}
+
+.btn-volver {
+    background-color: #007bff;
+}
+
+.mensaje-error {
+    color: red;
+    font-weight: bold;
+}
+
+
+
+/* === ESTILOS PARA LA PÁGINA CONTACTO === */
+.contact-container {
+    max-width: 700px;
+    margin: 70px auto;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.contact-container h2 {
+    text-align: center;
+    color: #182848;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+/* FORMULARIO */
+.contact-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* CAMPOS DE TEXTO Y ÁREAS */
+.contact-container input[type="text"],
+.contact-container input[type="email"],
+.contact-container textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    resize: none;
+}
+
+.contact-container input:focus,
+.contact-container textarea:focus {
+    outline: none;
+    border-color: #4b6cb7;
+    box-shadow: 0 0 6px rgba(75,108,183,0.4);
+}
+
+/* BOTÓN */
+.contact-container button,
+.contact-container input[type="submit"],
+.contact-container .aspNetButton {
+    background-color: #4b6cb7;
+    color: #fff;
+    border: none;
+    padding: 12px 18px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-container button:hover,
+.contact-container input[type="submit"]:hover,
+.contact-container .aspNetButton:hover {
+    background-color: #182848;
+}
+
+/* MENSAJES */
+.contact-container .msg-ok {
+    color: #2e8b57;
+    text-align: center;
+    font-weight: 600;
+}
+
+.contact-container .msg-error {
+    color: #c0392b;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .contact-container {
+        padding: 25px;
+        margin: 30px 10px;
+    }
+
+    .contact-container input,
+    .contact-container textarea {
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

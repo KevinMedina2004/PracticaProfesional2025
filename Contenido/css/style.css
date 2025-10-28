@@ -56,6 +56,87 @@ html {
   box-sizing: border-box;
 }
 
+
+
+
+.form-container {
+    max-width: 600px;
+    margin: 70px auto;
+    background: #fff;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.form-container h2 {
+    text-align: center;
+    color: #182848;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.form-container input[type="text"],
+.form-container select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.aspNetButton {
+    background-color: #4b6cb7;
+    color: #fff;
+    border: none;
+    padding: 12px 18px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.aspNetButton:hover {
+    background-color: #182848;
+}
+
+.msg-ok {
+    display: block;
+    margin-top: 10px;
+    color: #2e8b57;
+    font-weight: 600;
+}
+
+.msg-error {
+    display: block;
+    margin-top: 10px;
+    color: #b30000;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Fondo cálido tipo panadería */
 body.compra-realizada {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -260,6 +341,61 @@ body.compra-realizada {
 }
 
 
+.form-container {
+    max-width: 600px;
+    margin: 70px auto;
+    background: #fff;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.form-container h2 {
+    text-align: center;
+    color: #182848;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.form-container input[type="text"],
+.form-container select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.aspNetButton {
+    background-color: #4b6cb7;
+    color: #fff;
+    border: none;
+    padding: 12px 18px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.aspNetButton:hover {
+    background-color: #182848;
+}
+
+.msg-ok {
+    display: block;
+    margin-top: 10px;
+    color: #2e8b57;
+    font-weight: 600;
+}
+
+.msg-error {
+    display: block;
+    margin-top: 10px;
+    color: #b30000;
+    font-weight: 600;
+}
 
 
 

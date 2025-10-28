@@ -1,28 +1,39 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true"
     CodeBehind="Inicio.aspx.cs" Inherits="PracticaProfesional2025.Inicio" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" >
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="content" class="p-4 p-md-5 pt-5">
-        <h2 class="mb-4">PRODUCTOS DISPONIBLES</h2>
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="mb-0">PRODUCTOS DISPONIBLES</h2>
+            <asp:Button ID="btnAgregarProducto" runat="server" CssClass="btn btn-success"
+                        Text="Agregar Producto" OnClick="btnAgregarProducto_Click" Visible="false" />
+        </div>
 
-        <asp:Repeater ID="rptProductos" runat="server">
-            <ItemTemplate>
-                <div class="producto-item" style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
-                    <asp:Image ID="imgProducto" runat="server"
-                        ImageUrl='<%# ResolveUrl(Eval("ImagenUrl").ToString()) %>' Width="200" />
-                    <br />
-                    <h3><%# Eval("Nombre") %></h3>
-                    <p><%# Eval("Descripcion") %></p>
-                    Cantidad:
-                    <asp:TextBox ID="txtCantidad" runat="server" Text="1" Width="50"></asp:TextBox>
-
-                   <asp:Button ID="btnAgregar" runat="server" Text="Agregar al carrito"
-                        CommandArgument='<%# Eval("Nombre") %>'
-                        OnClientClick="return confirm('¿Deseas agregar este producto al carrito?');"
-                        OnClick="AgregarAlCarrito_Click" />
-                </div>
-            </ItemTemplate>
-        </asp:Repeater>
+        <div class="row">
+            <asp:Repeater ID="rptProductos" runat="server">
+                <ItemTemplate>
+                    <div class="col-sm-4 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <img src='<%# ResolveUrl(Eval("ImagenUrl").ToString()) %>' class="card-img-top" alt="Producto" style="height:200px; object-fit:cover;">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <div>
+                                    <h5 class="card-title"><%# Eval("Nombre") %></h5>
+                                    <p class="card-text"><%# Eval("Descripcion") %></p>
+                                </div>
+                                <div class="mt-3">
+                                    <label>Cantidad:</label>
+                                    <asp:TextBox ID="txtCantidad" runat="server" Text="1" CssClass="form-control w-25 d-inline-block" />
+                                    <asp:Button ID="btnAgregar" runat="server" Text="Agregar al carrito"
+                                        CssClass="btn btn-primary btn-sm d-block mt-2"
+                                        CommandArgument='<%# Eval("Nombre") %>'
+                                        OnClientClick="return confirm('¿Deseas agregar este producto al carrito?');"
+                                        OnClick="AgregarAlCarrito_Click" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
+        </div>
     </div>
-
 </asp:Content>

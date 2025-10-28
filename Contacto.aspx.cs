@@ -26,5 +26,9 @@ namespace PracticaProfesional2025
             txtMensaje.Text = string.Empty;
             lblResultado.Text = string.Empty;
         }
+        protected void btnVolver1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Inicio.aspx");
+        }
     }
 }

@@ -10,7 +10,6 @@ namespace PracticaProfesional2025
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         // LOGIN
@@ -18,7 +17,8 @@ namespace PracticaProfesional2025
         {
             using (SqlConnection conexion = new SqlConnection(Cadena))
             {
-                string script = "SELECT ID FROM USUARIO2 WHERE MAIL=@Mail AND CONTRASEÑA=@Pass";
+                string script = "SELECT ID, NOMBRE, APELLIDO, MAIL, ISNULL(ADMINISTRADOR, 0) AS ADMINISTRADOR " +
+                                "FROM USUARIO2 WHERE MAIL=@Mail AND CONTRASEÑA=@Pass";
 
                 SqlCommand command = new SqlCommand(script, conexion);
                 command.Parameters.AddWithValue("@Mail", txtUsuario.Text.Trim());
@@ -27,22 +27,24 @@ namespace PracticaProfesional2025
                 conexion.Open();
                 SqlDataReader reader = command.ExecuteReader();
 
-                string id = string.Empty;
-                if (reader.HasRows)
+                if (reader.Read())
                 {
-                    while (reader.Read())
-                        id = reader.GetInt32(0).ToString();
-                }
-                reader.Close();
-                conexion.Close();
+                    // Guarda datos en sesión
+                    Session["Usuario"] = reader["ID"].ToString();
+                    Session["Nombre"] = reader["NOMBRE"].ToString();
+                    Session["Apellido"] = reader["APELLIDO"].ToString();
+                    Session["Mail"] = reader["MAIL"].ToString();
+                    Session["Administrador"] = Convert.ToInt32(reader["ADMINISTRADOR"]);
 
-                if (!string.IsNullOrEmpty(id))
-                {
-                    Session["Usuario"] = id;
                     Response.Redirect("Inicio.aspx");
                 }
                 else
+                {
                     lblMensaje.Text = "Usuario y/o contraseña incorrectos";
+                }
+
+                reader.Close();
+                conexion.Close();
             }
         }
 
@@ -63,8 +65,8 @@ namespace PracticaProfesional2025
 
             using (SqlConnection conexion = new SqlConnection(Cadena))
             {
-                string query = "INSERT INTO USUARIO2 (NOMBRE, APELLIDO, MAIL, CONTRASEÑA) " +
-                               "VALUES (@Nombre, @Apellido, @Mail, @Password)";
+                string query = "INSERT INTO USUARIO2 (NOMBRE, APELLIDO, MAIL, CONTRASEÑA, ADMINISTRADOR) " +
+                               "VALUES (@Nombre, @Apellido, @Mail, @Password, 0)"; // 👈 por defecto no admin
 
                 using (SqlCommand cmd = new SqlCommand(query, conexion))
                 {

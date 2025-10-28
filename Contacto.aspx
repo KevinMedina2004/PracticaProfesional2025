@@ -20,7 +20,7 @@
             <img src="Contenido/images/YfGAQv.jpg" width="200px" height="200px" style="text-align: center" />
             <asp:Button ID="btnEnviar" CssClass="aspNetButton" Text="Enviar" runat="server" OnClick="btnEnviar_Click" />
             <asp:Button ID="btnLimpiar" CssClass="aspNetButton" Text="Limpiar" runat="server" OnClick="btnLimpiar_Click" />
-            
+             <asp:Button ID="Button1" CssClass="aspNetButton" Text="Volver Atras" runat="server" OnClick="btnVolver1_Click" />
             <asp:Label ID="lblResultado" runat="server" />
         </form>
     </div>

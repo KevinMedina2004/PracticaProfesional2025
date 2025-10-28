@@ -1,84 +1,102 @@
 ﻿using System;
-using System.Configuration;
 using System.Data.SqlClient;
-using System.Web.UI;
+using System.Configuration;
+using System.IO;
 
 namespace PracticaProfesional2025
 {
-    public partial class NuevoProducto : Page
+    public partial class NuevoProducto : System.Web.UI.Page
     {
+        private static string Cadena = ConfigurationManager.ConnectionStrings["CadenaPP2025"].ConnectionString;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
-        protected void btnVolver_Click(object sender, EventArgs e)
+
+        protected void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string nombreArchivo = "";
+                string rutaRelativa = "";
+
+                // 📸 Guardar imagen
+                if (fuImagen.HasFile)
+                {
+                    string extension = Path.GetExtension(fuImagen.FileName).ToLower();
+                    if (extension == ".jpg" || extension == ".jpeg" || extension == ".png")
+                    {
+                        nombreArchivo = DateTime.Now.Ticks + "_" + fuImagen.FileName;
+                        string carpetaDestino = Server.MapPath("~/Contenido/Productos/");
+
+                        if (!Directory.Exists(carpetaDestino))
+                            Directory.CreateDirectory(carpetaDestino);
+
+                        string rutaCompleta = Path.Combine(carpetaDestino, nombreArchivo);
+                        fuImagen.SaveAs(rutaCompleta);
+
+                        // Ruta relativa para mostrar la imagen
+                        rutaRelativa = "Contenido/Productos/" + nombreArchivo;
+                    }
+                    else
+                    {
+                        lblMensaje.Text = "❌ Solo se permiten imágenes JPG o PNG.";
+                        lblMensaje.CssClass = "msg-error";
+                        return;
+                    }
+                }
+                else
+                {
+                    lblMensaje.Text = "❌ Debes seleccionar una imagen.";
+                    lblMensaje.CssClass = "msg-error";
+                    return;
+                }
+
+                // 💾 Guardar producto
+                using (SqlConnection conexion = new SqlConnection(Cadena))
+                {
+                    string query = "INSERT INTO productos_disponibles (Nombre, Descripcion, ImagenURL, Seccion) VALUES (@Nombre, @Descripcion, @ImagenURL, @Seccion)";
+
+                    SqlCommand cmd = new SqlCommand(query, conexion);
+                    cmd.Parameters.AddWithValue("@Nombre", txtNombre.Text);
+                    cmd.Parameters.AddWithValue("@Descripcion", txtDescripcion.Text);
+                    cmd.Parameters.AddWithValue("@ImagenURL", rutaRelativa);
+                    cmd.Parameters.AddWithValue("@Seccion", ddlSeccion.SelectedValue);
+
+                    conexion.Open();
+                    cmd.ExecuteNonQuery();
+                    conexion.Close();
+                }
+
+                // ✅ Redirigir según la sección elegida
+                string seccion = ddlSeccion.SelectedValue;
+                switch (seccion)
+                {
+                    case "Moda":
+                        Response.Redirect("Moda.aspx");
+                        break;
+                    case "Perfumeria":
+                        Response.Redirect("Perfumeria.aspx");
+                        break;
+                    case "Postres":
+                        Response.Redirect("Postres.aspx");
+                        break;
+                    case "Inicio":
+                    default:
+                        Response.Redirect("Inicio.aspx");
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMensaje.Text = "❌ Error: " + ex.Message;
+                lblMensaje.CssClass = "msg-error";
+            }
+        }
+
+        protected void btnGuardar0_Click(object sender, EventArgs e)
         {
             Response.Redirect("Inicio.aspx");
         }
-        protected void btnGuardar_Click(object sender, EventArgs e)
-        {
-            string nombre = txtNombre.Text.Trim();
-            string descripcion = txtDescripcion.Text.Trim();
-            string imagenUrl = "";
-
-            // Validar campos
-            if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(descripcion))
-            {
-                Response.Write("<script>                                    alert('Nombre y descripción son obligatorios.');</script>");
-                return;
-            }
-
-            // Validar que se haya seleccionado un archivo
-            if (fuImagen.HasFile)
-            {
-                try
-                {
-                    // Obtener extensión y nombre del archivo
-                    string extension = System.IO.Path.GetExtension(fuImagen.FileName).ToLower();
-                    string[] permitidas = { ".jpg", ".jpeg", ".png", ".gif" };
-
-                    if (Array.IndexOf(permitidas, extension) < 0)
-                    {
-                        Response.Write("<script>                                            alert('Formato de imagen no permitido. Solo JPG, PNG, GIF.');</script>");
-                        return;
-                    }
-
-                    // Crear ruta en la carpeta de tu proyecto
-                    string nombreArchivo = Guid.NewGuid().ToString() + extension; // para evitar duplicados
-                    string rutaServidor = Server.MapPath("~/Contenido/images/") + nombreArchivo;
-                    fuImagen.SaveAs(rutaServidor);
-
-                    // Guardar ruta relativa en la DB
-                    imagenUrl = "~/Contenido/images/" + nombreArchivo;
-                }
-                catch (Exception ex)
-                {
-                    Response.Write("<script>                                        alert('Error al subir la imagen: " + ex.Message + "');</script>");
-                    return;
-                }
-            }
-            else
-            {
-                Response.Write("<script>                                    alert('Debes seleccionar una imagen.');</script>");
-                return;
-            }
-
-            // Guardar en la base de datos
-            string connStr = ConfigurationManager.ConnectionStrings["CadenaPP2025"].ConnectionString;
-
-            using (SqlConnection conn = new SqlConnection(connStr))
-            {
-                conn.Open();
-                string query = "INSERT INTO productos_disponibles (Nombre, Descripcion, ImagenUrl) VALUES (@nombre, @descripcion, @imagen)";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@nombre", nombre);
-                cmd.Parameters.AddWithValue("@descripcion", descripcion);
-                cmd.Parameters.AddWithValue("@imagen", imagenUrl);
-                cmd.ExecuteNonQuery();
-            }
-
-            Response.Write("<script>                                alert('Producto agregado correctamente.'); window.location = 'Inicio.aspx';</script>");
-        }
-
     }
 }

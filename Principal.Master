@@ -27,11 +27,13 @@
                     <li><a href="Moda.aspx"> 💍 Moda </a></li>
                     <li><a href="Perfumeria.aspx"> ⚱️ Perfumeria </a></li>
                     <li><a href="Postres.aspx"> 🍰 Postres </a></li>
-                    <li><a href="NuevoProducto.aspx"> ➕ Agregar Producto </a></li>
+                   <%-- <li><a href="NuevoProducto.aspx"> ➕ Agregar Producto </a></li>--%>
+
                     <li><a href="Contacto.aspx"> 📲 Contacto </a></li>
                 </ul>
             </div>
         </nav>
+      
 
         <form id="form1" runat="server">
      <div class="btn-carrito-container">
@@ -43,6 +45,8 @@
            
             </div>     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
+                 <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar Sesión"
+            CssClass="btn btn-danger" OnClick="btnCerrarSesion_Click" Visible="false" />
         </form>
     </div>
 

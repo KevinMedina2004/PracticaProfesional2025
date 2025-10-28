@@ -12,8 +12,17 @@ namespace PracticaProfesional2025
             if (!IsPostBack)
             {
                 ActualizarContadorCarrito();
-            }
 
+                // Mostrar botón de cerrar sesión solo si hay un usuario logueado
+                if (Session["Usuario"] != null)
+                {
+                    btnCerrarSesion.Visible = true;
+                }
+                else
+                {
+                    btnCerrarSesion.Visible = false;
+                }
+            }
         }
 
         // Botón de carrito muestra cantidad actual de productos
@@ -25,10 +34,22 @@ namespace PracticaProfesional2025
             lblContadorCarrito.Text = total.ToString();
             lblContadorCarrito.Visible = total > 0;
         }
+
         protected void btnCarrito_Click(object sender, EventArgs e)
         {
             // Redirige a página de carrito o muestra popup
             Response.Redirect("Carrito.aspx");
+        }
+
+        // NUEVO: Botón Cerrar Sesión
+        protected void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            // Limpiar sesión
+            Session.Clear();
+            Session.Abandon();
+
+            // Redirigir a login
+            Response.Redirect("Login.aspx");
         }
     }
 }

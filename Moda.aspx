@@ -1,65 +1,40 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="Moda.aspx.cs" Inherits="PracticaProfesional2025.Moda" %>
+﻿<%@ Page Title="Moda" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true"
+    CodeBehind="Moda.aspx.cs" Inherits="PracticaProfesional2025.Moda" %>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="content" class="p-4 p-md-5 pt-5">
-        <h2 class="mb-4">
-           SECTOR MODA </h2>
-        <h2 class="mb-4">
-           
-            <img alt="" src="file:///C:/Users/Kevin/Desktop/PracticaProfesional2025-main/PracticaProfesional2025/Contenido/images/budin-chocolate.png"
-                style="width: 0; height: 0" /></h2>
-      
-     
-     
-       <br />  
-        <div class="productos-container">
-        <asp:Panel ID="PanelDIJECIELO" runat="server" Width="300px"  CssClass="producto-panel">
-           
-            <!-- Título arriba -->
-
-            <asp:Label ID="LabelDIJECIELO" runat="server" Text="DIJE DE CIELITO" CssClass="tituloImagen"
-                Width="300px" />
-            <!-- Imagen en el medio -->
-
-            <%--<asp:ImageButton ID="imgProducto" runat="server"         ImageUrl="~/Contenido/descarga.jpg" Width="300px"      onclick="imgProducto_Click1" OnClientClick="return confirmarCompra();"/>--%>
-
-            <asp:ImageButton ID="ImageButtonDIJECIELO" runat="server" ImageUrl="~/Contenido/images/fotos de productos/dije_cielito.jpeg"
-                Width="200" /><br />
-            <asp:Label ID="Label8" runat="server" Text="DIJE DE CIELITO " Font-Bold="true" />
-            
-            <br /><asp:Label ID="Label9" runat="server" Text="Belleza asegurada!."
-                CssClKGass="descripcionImagen" Width="300px" />
-        </asp:Panel>
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="mb-0">💍 PRODUCTOS DE MODA</h2>
+            <asp:Button ID="btnAgregarProducto" runat="server" CssClass="btn btn-success"
+                        Text="Agregar Producto" OnClick="btnAgregarProducto_Click" Visible="false" />
         </div>
-            Cantidad:
-          <%--  <asp:TextBox ID="TextBox1" runat="server" Text="1" Width="50" 
-            ontextchanged="TextBox1_TextChanged" />--%>
-        <asp:TextBox ID="TextBoxDIJECIELO" runat="server" Text="1" Width="50" 
-            ontextchanged="TextBoxDIJECIELO_TextChanged"></asp:TextBox>
-        <br />
-            <br />
-            <asp:Button ID="Button3" runat="server" Text="Agregar Producto" CommandArgument="DIJE DE CIELO"
-                OnClick="btnCIELO_Click2" OnClientClick="return confirm('¿Estás seguro de que querés agregar este producto al carrito?');" /><br />
-           
-            <!-- aca cierra este producto -->
 
-         
+        <div class="row">
+            <asp:Repeater ID="rptProductos" runat="server">
+                <ItemTemplate>
+                    <div class="col-sm-4 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <img src='<%# ResolveUrl(Eval("ImagenUrl").ToString()) %>' class="card-img-top" alt="Producto" style="height:200px; object-fit:cover;">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <div>
+                                    <h5 class="card-title"><%# Eval("Nombre") %></h5>
+                                    <p class="card-text"><%# Eval("Descripcion") %></p>
+                                </div>
 
-
-
-
-            
-        <div id="popupConfirmacion" style="display: none;" class="popup-overlay">
-            <div class="popup-contenido">
-                <h3>
-                    ¿Confirmás la compra?</h3>
-                <button onclick="confirmarCompra()">
-                    Sí, comprar</button>
-                <button onclick="cerrarPopup()">
-                        Cancelar</button></div>
+                                <div class="mt-3">
+                                    <label>Cantidad:</label>
+                                    <asp:TextBox ID="txtCantidad" runat="server" Text="1" CssClass="form-control w-25 d-inline-block" />
+                                    <asp:Button ID="btnAgregar" runat="server" Text="Agregar al carrito"
+                                        CssClass="btn btn-primary btn-sm d-block mt-2"
+                                        CommandArgument='<%# Eval("Nombre") %>'
+                                        OnClientClick="return confirm('¿Deseas agregar este producto al carrito?');"
+                                        OnClick="AgregarAlCarrito_Click" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
         </div>
-        <h2 class="mb-4">
-            &nbsp;</h2>
     </div>
 </asp:Content>
-

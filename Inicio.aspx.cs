@@ -13,18 +13,32 @@ namespace PracticaProfesional2025
         {
             if (!IsPostBack)
             {
-                CargarProductosDesdeBD();
+                MostrarBotonAdmin();
+                CargarProductos("Inicio");
             }
         }
 
-        public class Producto
+        private void MostrarBotonAdmin()
         {
-            public string Nombre { get; set; }
-            public string Descripcion { get; set; }
-            public string ImagenUrl { get; set; }
+            btnAgregarProducto.Visible = false;
+            if (Session["Usuario"] != null)
+            {
+                int idUsuario = Convert.ToInt32(Session["Usuario"]);
+                string connStr = ConfigurationManager.ConnectionStrings["CadenaPP2025"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+                    string query = "SELECT ISNULL(ADMINISTRADOR,0) FROM USUARIO2 WHERE ID=@ID";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@ID", idUsuario);
+                    int admin = Convert.ToInt32(cmd.ExecuteScalar());
+                    if (admin == 1)
+                        btnAgregarProducto.Visible = true;
+                }
+            }
         }
 
-        private void CargarProductosDesdeBD()
+        private void CargarProductos(string seccion)
         {
             string connStr = ConfigurationManager.ConnectionStrings["CadenaPP2025"].ConnectionString;
             var productos = new List<Producto>();
@@ -32,8 +46,9 @@ namespace PracticaProfesional2025
             using (SqlConnection conn = new SqlConnection(connStr))
             {
                 conn.Open();
-                string query = "SELECT Nombre, Descripcion, ImagenUrl FROM productos_disponibles";
+                string query = "SELECT Nombre, Descripcion, ImagenURL FROM productos_disponibles WHERE Seccion=@Seccion";
                 SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Seccion", seccion);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
@@ -41,13 +56,20 @@ namespace PracticaProfesional2025
                     {
                         Nombre = reader["Nombre"].ToString(),
                         Descripcion = reader["Descripcion"].ToString(),
-                        ImagenUrl = reader["ImagenUrl"].ToString()
+                        ImagenUrl = reader["ImagenURL"].ToString()
                     });
                 }
             }
 
             rptProductos.DataSource = productos;
             rptProductos.DataBind();
+        }
+
+        public class Producto
+        {
+            public string Nombre { get; set; }
+            public string Descripcion { get; set; }
+            public string ImagenUrl { get; set; }
         }
 
         protected void AgregarAlCarrito_Click(object sender, EventArgs e)
@@ -61,9 +83,7 @@ namespace PracticaProfesional2025
             TextBox txtCantidad = item.FindControl("txtCantidad") as TextBox;
             int cantidad = 1;
             if (txtCantidad != null)
-            {
                 int.TryParse(txtCantidad.Text, out cantidad);
-            }
 
             CarritoItem carritoItem = new CarritoItem
             {
@@ -75,10 +95,14 @@ namespace PracticaProfesional2025
             carrito.Add(carritoItem);
             Session["Carrito"] = carrito;
 
-            // Actualiza contador del master page
             ((Principal)Master).ActualizarContadorCarrito();
 
             Response.Redirect("CompraRealizada.aspx");
+        }
+
+        protected void btnAgregarProducto_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("NuevoProducto.aspx");
         }
     }
 }

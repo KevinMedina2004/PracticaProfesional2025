@@ -51,5 +51,7 @@ namespace PracticaProfesional2025
             // Redirigir a login
             Response.Redirect("Login.aspx");
         }
+       
+
     }
 }

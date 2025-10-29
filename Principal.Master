@@ -10,45 +10,77 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="Contenido/css/style.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        /* 🔹 Sidebar ocupa toda la altura de la pantalla */
+        #sidebar {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh; /* altura total del navegador */
+        }
+
+        /* 🔹 Contenedor principal del contenido del menú */
+        .sidebar-content {
+            flex-grow: 1; /* ocupa todo el espacio disponible arriba */
+        }
+
+        /* 🔹 Botón de cerrar sesión pegado abajo */
+        .logout-btn {
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            margin-top: auto; /* empuja hacia abajo */
+        }
+
+        .logout-btn .btn {
+            width: 100%;
+        }
+    </style>
 </head>
-<body background-color="red">
-    <div class="wrapper d-flex align-items-stretch">
-        <nav id="sidebar">
-            <div class="custom-menu">
-                <button type="button" id="sidebarCollapse" class="btn btn-primary">
-                    <i class="fa fa-bars"></i>
-                    <span class="sr-only">Toggle Menu</span>
-                </button>
+<body>
+    <form id="form1" runat="server">
+        <div class="wrapper d-flex align-items-stretch">
+            <nav id="sidebar">
+                <div class="custom-menu">
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                        <i class="fa fa-bars"></i>
+                        <span class="sr-only">Toggle Menu</span>
+                    </button>
+                </div>
+
+                <div class="p-4 sidebar-content">
+                    <asp:Image ID="Image1" runat="server" Height="118px" Width="148px"
+                        ImageUrl="~/Contenido/una emprendedora que.png" />
+
+                    <ul class="list-unstyled components mb-5">
+                        <li class="active"><a href="Inicio.aspx"> ☕ Para Merendar </a></li>
+                        <li><a href="Moda.aspx"> 💍 Moda </a></li>
+                        <li><a href="Perfumeria.aspx"> ⚱️ Perfumería </a></li>
+                        <li><a href="Postres.aspx"> 🍰 Postres </a></li>
+                        <li><a href="Contacto.aspx"> 📲 Contacto </a></li>
+                         <li><a href="DocumentacionUsuario.aspx"> 💬 Como Comprar</a></li>
+                    </ul>
+                </div>
+
+                <!-- 🚪 Botón Cerrar Sesión fijo al fondo -->
+                <div class="logout-btn p-3">
+                    <asp:Button ID="btnCerrarSesion" runat="server"
+                        Text="🚪 Cerrar Sesión" CssClass="btn btn-danger"
+                        OnClick="btnCerrarSesion_Click" Visible="false" />
+                </div>
+            </nav>
+
+            <div class="content p-4">
+                <div class="btn-carrito-container">
+                    <asp:Button ID="btnCarrito" runat="server" CssClass="btn-carrito" Text="🛒" OnClick="btnCarrito_Click" />
+                    <asp:Label ID="lblContadorCarrito" runat="server" CssClass="contador"></asp:Label>
+                </div>
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
             </div>
-            <div class="p-4">
-                <asp:Image ID="Image1" runat="server" Height="118px" Width="148px" ImageUrl="~/Contenido/una emprendedora que.png" />
-                <ul class="list-unstyled components mb-5">
-                    <li class="active"><a href="Inicio.aspx"> ☕ Para Merendar </a></li>
-                    <li><a href="Moda.aspx"> 💍 Moda </a></li>
-                    <li><a href="Perfumeria.aspx"> ⚱️ Perfumeria </a></li>
-                    <li><a href="Postres.aspx"> 🍰 Postres </a></li>
-                   <%-- <li><a href="NuevoProducto.aspx"> ➕ Agregar Producto </a></li>--%>
-
-                    <li><a href="Contacto.aspx"> 📲 Contacto </a></li>
-                </ul>
-            </div>
-        </nav>
-      
-
-        <form id="form1" runat="server">
-     <div class="btn-carrito-container">
-    <asp:Button ID="btnCarrito" runat="server" CssClass="btn-carrito" Text="🛒" OnClick="btnCarrito_Click" />
-    <asp:Label ID="lblContadorCarrito" runat="server" CssClass="contador"></asp:Label>
- 
-
-
-           
-            </div>     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                </asp:ContentPlaceHolder>
-                 <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar Sesión"
-            CssClass="btn btn-danger" OnClick="btnCerrarSesion_Click" Visible="false" />
-        </form>
-    </div>
+        </div>
+    </form>
 
     <script src="Contenido/js/jquery.min.js"></script>
     <script src="Contenido/js/popper.js"></script>

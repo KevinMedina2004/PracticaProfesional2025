@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="content" class="p-4 p-md-5 pt-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2 class="mb-0">💍 PRODUCTOS DE MODA</h2>
+            <h2 class="titulo-destacado">💍 PRODUCTOS DE MODA</h2>
             <asp:Button ID="btnAgregarProducto" runat="server" CssClass="btn btn-success"
                         Text="Agregar Producto" OnClick="btnAgregarProducto_Click" Visible="false" />
         </div>

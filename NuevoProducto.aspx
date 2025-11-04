@@ -13,24 +13,24 @@
     <div class="container">
         <h2>
             Agregar nuevo producto</h2>
-        <asp:TextBox ID="txtNombre" runat="server" placeholder="Nombre del producto"></asp:TextBox><br />
-        <asp:TextBox ID="txtDescripcion" runat="server" placeholder="Descripción"></asp:TextBox><br />
+        <asp:TextBox ID="txtNombre"  class="titulo-destacado" runat="server" placeholder="Nombre del producto"></asp:TextBox><br />
+        <asp:TextBox ID="txtDescripcion" class="titulo-destacado" runat="server" placeholder="Descripción"></asp:TextBox><br />
         <label>
             Seleccionar imagen del producto:</label><br />
-        <asp:FileUpload ID="fuImagen" runat="server" /><br />
+        <asp:FileUpload ID="fuImagen"  CssClass="aspNetButton" runat="server" /><br />
         <br />
-        <label>
+        <label >
             Seleccionar sección:</label><br />
-      <asp:DropDownList ID="ddlSeccion" runat="server" CssClass="form-select">
+      <asp:DropDownList ID="ddlSeccion" runat="server"  CssClass="aspNetButton">
     <asp:ListItem Text="Inicio" Value="Inicio"></asp:ListItem>
     <asp:ListItem Text="Moda" Value="Moda"></asp:ListItem>
     <asp:ListItem Text="Perfumeria" Value="Perfumeria"></asp:ListItem>
     <asp:ListItem Text="Postres" Value="Postres"></asp:ListItem>
-</asp:DropDownList>
+</asp:DropDownList> <br />
 
         <br />
         <asp:Button ID="btnGuardar0" Text="Volver Atras" runat="server" CssClass="aspNetButton"
-            OnClick="btnGuardar0_Click" />
+            OnClick="btnGuardar0_Click" /> <br />
         <br />
         <asp:Button ID="btnGuardar" Text="Guardar producto" runat="server" CssClass="aspNetButton"
             OnClick="btnGuardar_Click" />

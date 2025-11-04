@@ -81,18 +81,25 @@ namespace PracticaProfesional2025
                 }
             }
 
+            // Limpia campos
             txtNombreReg.Text = "";
             txtApellidoReg.Text = "";
             txtMailReg.Text = "";
             txtPasswordReg.Text = "";
-            lblMensajeReg.ForeColor = System.Drawing.Color.Green;
-            lblMensajeReg.Text = "Usuario registrado correctamente. Ya puedes iniciar sesión.";
+
+            // Mensaje de éxito en login
+            lblMensaje.ForeColor = System.Drawing.Color.Green;
+            lblMensaje.Text = "Usuario registrado correctamente. Ya puedes iniciar sesión.";
+
+            // Oculta panel de registro y vuelve al login
+            pnlRegistro.Visible = false;
         }
 
         // Mostrar panel de registro
         protected void lnkMostrarRegistro_Click(object sender, EventArgs e)
         {
             pnlRegistro.Visible = true;
+            lblMensaje.Text = ""; // limpia mensajes anteriores
         }
     }
 }

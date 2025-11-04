@@ -71,7 +71,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <h2>✅ ¡Compra realizada con éxito!</h2>
+        <h2>✅ ¡Confirma la compra de tus productos!</h2>
 
         <asp:Repeater ID="rptCarrito" runat="server">
             <ItemTemplate>

@@ -39,6 +39,12 @@
     </style>
 </head>
 <body>
+<%--LINEA PARA HABILITAR EL FONDO--%>
+<%--<body style="background-image: url('pastry-and-bakery-banner-illustration-wallpaper-background-line-art-vector.jpg');
+             background-repeat: repeat;
+             background-attachment: fixed;
+             background-size: auto;
+             background-color: #000;">--%>
     <form id="form1" runat="server">
         <div class="wrapper d-flex align-items-stretch">
             <nav id="sidebar">
@@ -73,9 +79,10 @@
 
             <div class="content p-4">
                 <div class="btn-carrito-container">
-                    <asp:Button ID="btnCarrito" runat="server" CssClass="btn-carrito" Text="🛒" OnClick="btnCarrito_Click" />
-                    <asp:Label ID="lblContadorCarrito" runat="server" CssClass="contador"></asp:Label>
-                </div>
+    <asp:Button ID="btnCarrito" runat="server" CssClass="btn-carrito" Text="🛒" OnClick="btnCarrito_Click" />
+    <asp:Label ID="lblContadorCarrito" runat="server" CssClass="contador" Text="0"></asp:Label>
+</div>
+
 
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
             </div>

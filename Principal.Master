@@ -38,10 +38,12 @@
         }
     </style>
 </head>
-<body>
+<body style="background-image: url('Contenido/FONDO.jpg');
+ background-size: cover;
+            background-position: center;">
 <%--LINEA PARA HABILITAR EL FONDO--%>
-<%--<body style="background-image: url('pastry-and-bakery-banner-illustration-wallpaper-background-line-art-vector.jpg');
-             background-repeat: repeat;
+<%--<body style= "background-image: url ("Contenido/fondo.jpg");
+             background-repeat: no-repeat;
              background-attachment: fixed;
              background-size: auto;
              background-color: #000;">--%>

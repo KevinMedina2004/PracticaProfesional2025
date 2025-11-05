@@ -13,6 +13,7 @@ namespace PracticaProfesional2025
         {
             if (!IsPostBack)
             {
+                MostrarBotonAdmin2();
                 MostrarBotonAdmin();
                 CargarProductos("Inicio");
             }
@@ -103,6 +104,30 @@ namespace PracticaProfesional2025
         protected void btnAgregarProducto_Click(object sender, EventArgs e)
         {
             Response.Redirect("NuevoProducto.aspx");
+        }
+
+        protected void btnEliminarProducto_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Grilla.aspx");
+        }
+        private void MostrarBotonAdmin2()
+        {
+            BtnEliminarProducto.Visible = false;
+            if (Session["Usuario"] != null)
+            {
+                int idUsuario = Convert.ToInt32(Session["Usuario"]);
+                string connStr = ConfigurationManager.ConnectionStrings["CadenaPP2025"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(connStr))
+                {
+                    conn.Open();
+                    string query = "SELECT ISNULL(ADMINISTRADOR,0) FROM USUARIO2 WHERE ID=@ID";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@ID", idUsuario);
+                    int admin = Convert.ToInt32(cmd.ExecuteScalar());
+                    if (admin == 1)
+                        BtnEliminarProducto.Visible = true;
+                }
+            }
         }
     }
 }

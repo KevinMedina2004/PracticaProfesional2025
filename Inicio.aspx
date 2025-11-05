@@ -6,7 +6,9 @@
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2 class="titulo-destacado">☕ PRODUCTOS PARA MERENDAR</h2>
             <asp:Button ID="btnAgregarProducto" runat="server" CssClass="btn btn-success"
-                        Text="Agregar Producto" OnClick="btnAgregarProducto_Click" Visible="false" />
+                        Text="➕ Agregar Producto" OnClick="btnAgregarProducto_Click" Visible="false" /> <br />
+                        <asp:Button ID="BtnEliminarProducto" runat="server" CssClass="btn btn-danger"
+                        Text="❌ Eliminar Producto" OnClick="btnEliminarProducto_Click" Visible="false" />
         </div>
 
         <div class="row">

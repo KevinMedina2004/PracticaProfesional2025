@@ -58,6 +58,7 @@
     <Content Include="Contenido\1f60a.png" />
     <Content Include="Contenido\64899cde-44ba-4bb1-af31-6ae2fe4e58bb.JPG" />
     <Content Include="Contenido\9562bf9d794f3d8d59f7e3fde205fdc4.jpg" />
+    <Content Include="Contenido\FONDO.jpg" />
     <Content Include="Contenido\apps.3104.14481483800220513.5d6b67d5-bde5-4f6b-9e61-27c8013e2ec6.png" />
     <Content Include="Contenido\Captura de pantalla 2025-09-02 201137.png" />
     <Content Include="Contenido\css\bootstrap.min.css" />
@@ -108,6 +109,7 @@
     <Content Include="Default.aspx" />
     <Content Include="DocumentacionUsuario.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Grilla.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Moda.aspx" />
@@ -174,6 +176,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Grilla.aspx.cs">
+      <DependentUpon>Grilla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grilla.aspx.designer.cs">
+      <DependentUpon>Grilla.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>

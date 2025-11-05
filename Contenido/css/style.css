@@ -1,4 +1,4 @@
-/*!
+Ôªø/*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
  * Copyright 2011-2019 Twitter, Inc.
@@ -172,6 +172,74 @@ html {
 }
 
 
+/* üé® Estilos modernos para GridView */
+.gridview-linda {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Cabecera */
+.gridview-linda th {
+    background-color: White; /* Azul viol√°ceo moderno */
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-weight: 600;
+}
+
+/* Filas */
+.gridview-linda td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Fila alterna (zebra) */
+.gridview-linda tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover */
+.gridview-linda tr:hover {
+    background-color: #edf2ff;
+    transition: background-color 0.2s ease;
+}
+
+/* Paginador del GridView */
+.gridview-linda .aspNetPager {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 8px;
+    border-top: 1px solid #ddd;
+}
+
+.gridview-linda .aspNetPager a,
+.gridview-linda .aspNetPager span {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 2px;
+    color: #5a67d8;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.gridview-linda .aspNetPager a:hover {
+    background-color: #5a67d8;
+    color: white;
+}
+
+.gridview-linda .aspNetPager span {
+    background-color: #5a67d8;
+    color: white;
+    font-weight: bold;
+}
 
 
 
@@ -194,9 +262,7 @@ html {
 
 
 
-
-
-/* Fondo c·lido tipo panaderÌa */
+/* Fondo c√°lido tipo panader√≠a */
 body.compra-realizada {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #f8e1c4, #f6d6ad);
@@ -204,7 +270,7 @@ body.compra-realizada {
     padding: 0;
 }
 .btn-carrito-container {
-    position: fixed; /* ahora todo el contenedor es fijo, pero solo afecta al botÛn y contador */
+    position: fixed; /* ahora todo el contenedor es fijo, pero solo afecta al bot√≥n y contador */
     top: 20px;
     right: 20px;
     z-index: 9999; /* siempre por encima del contenido */
@@ -219,7 +285,7 @@ body.compra-realizada {
     font-size: 24px;
     border: none;
     cursor: pointer;
-    position: relative; /* para que el contador se posicione respecto a Èl */
+    position: relative; /* para que el contador se posicione respecto a √©l */
 }
 
 .btn-carrito .contador {
@@ -308,7 +374,7 @@ body.compra-realizada {
 
 
 
-/* === ESTILOS PARA LA P¡GINA CONTACTO === */
+/* === ESTILOS PARA LA P√ÅGINA CONTACTO === */
 .contact-container {
     max-width: 700px;
     margin: 70px auto;
@@ -332,7 +398,7 @@ body.compra-realizada {
     gap: 15px;
 }
 
-/* CAMPOS DE TEXTO Y ¡REAS */
+/* CAMPOS DE TEXTO Y √ÅREAS */
 .contact-container input[type="text"],
 .contact-container input[type="email"],
 .contact-container textarea {
@@ -352,7 +418,7 @@ body.compra-realizada {
     box-shadow: 0 0 6px rgba(75,108,183,0.4);
 }
 
-/* BOT”N */
+/* BOT√ìN */
 .contact-container button,
 .contact-container input[type="submit"],
 .contact-container .aspNetButton {
@@ -470,7 +536,7 @@ body.compra-realizada {
 
 
 
-/* TÌtulo */
+/* T√≠tulo */
 .container h2 {
     color: #6b3e26;
     margin-bottom: 20px;
@@ -8753,8 +8819,9 @@ h1, h2, h3, h4, h5,
 #sidebar {
   min-width: 270px;
   max-width: 270px;
-  background: #3445b4;
-  color: #fff;
+ /* background: #3445b4;*/
+  background: #eb9a9a;
+  color: #779ef4;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
@@ -8768,7 +8835,7 @@ h1, h2, h3, h4, h5,
     font-weight: 700;
     font-size: 30px; }
     #sidebar h1 .logo {
-      color: #fff; }
+      color:#779ef4; }
       #sidebar h1 .logo span {
         font-size: 14px;
         color: #44bef1;
@@ -8834,7 +8901,7 @@ h1, h2, h3, h4, h5,
           -webkit-transform: rotate(45deg);
           -ms-transform: rotate(45deg);
           transform: rotate(45deg);
-          background: #3445b4;
+          background: #eb9a9a;
           border-radius: 10px; }
         #sidebar .custom-menu .btn.btn-primary:hover, #sidebar .custom-menu .btn.btn-primary:focus {
           background: transparent !important;
